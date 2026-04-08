@@ -1,7 +1,7 @@
 # AI Usage Report
 
 ## AI Tools yang Digunakan
-- **Claude Code** (Anthropic Claude Opus 4.6) — digunakan untuk generate seluruh codebase backend dan frontend.
+- **Claude Code** (Anthropic Claude Opus 4.6) — digunakan untuk generate kode backend dan frontend.
 
 ## Prompt Paling Kompleks
 
