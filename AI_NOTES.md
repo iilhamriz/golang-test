@@ -2,6 +2,7 @@
 
 ## AI Tools yang Digunakan
 - **Claude Code** (Anthropic Claude Opus 4.6) — digunakan untuk generate kode backend dan frontend.
+- **Cursor** (Agent) — digunakan untuk membantu memahami struktur file dan kode yang ada dan membantu debugging.
 
 ## Prompt Paling Kompleks
 
