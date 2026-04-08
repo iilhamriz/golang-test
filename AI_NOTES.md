@@ -7,11 +7,11 @@
 ## Prompt Paling Kompleks
 
 ```
-Build the complete Go backend for a Smart Inventory Core System.
-Business Rules:
-- Stock In: CREATED -> IN_PROGRESS -> DONE. Cancel only before DONE. Physical stock increases ONLY when status becomes DONE.
-- Stock Out: Two-Phase Commit. Phase 1 = Create DRAFT (check available stock, reserve via structural stock_out_items). Phase 2 = DRAFT -> IN_PROGRESS -> DONE. When DONE decrease physical_stock. Cancel at DRAFT/IN_PROGRESS = just change status (reservation released automatically). Use SELECT...FOR UPDATE for concurrency.
-- Available Stock = Physical Stock - SUM(reserved in DRAFT/IN_PROGRESS stock_out_items). Computed via SQL VIEW, not stored column.
+Buatkan use case untuk Stock Out dengan Two-Phase Commit pattern.
+Phase 1 (CreateDraft): cek available stock per item, lock row dengan SELECT...FOR UPDATE supaya tidak race condition, buat reservasi structural lewat stock_out_items.
+Phase 2 (UpdateStatus): DRAFT -> IN_PROGRESS -> DONE, saat DONE kurangi physical_stock.
+Cancel di DRAFT/IN_PROGRESS harus rollback reservasi otomatis (available stock computed dari VIEW, bukan stored column).
+Pastikan semua operasi dalam 1 database transaction.
 ```
 
 ## Kode yang Dimodifikasi Manual (Best Practice)
