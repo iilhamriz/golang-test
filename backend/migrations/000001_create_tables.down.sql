@@ -1,0 +1,9 @@
+DROP VIEW IF EXISTS v_item_stock;
+DROP TABLE IF EXISTS stock_adjustments;
+DROP TABLE IF EXISTS transaction_logs;
+DROP TABLE IF EXISTS stock_out_items;
+DROP TABLE IF EXISTS stock_out_transactions;
+DROP TABLE IF EXISTS stock_in_items;
+DROP TABLE IF EXISTS stock_in_transactions;
+DROP TABLE IF EXISTS items;
+DROP TABLE IF EXISTS customers;
